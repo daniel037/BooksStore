@@ -101,16 +101,24 @@ public class BooksStore extends Frame{
                 book.setText("");
             }
         });
+        
         //------------------------------------------------------
         
         remove.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-             disable.remove(disable.getSelectedIndex());            
-             enalble.remove(enalble.getSelectedIndex());   
-
+             enalble.remove(enalble.getSelectedIndex());      
             }
         });
+        //-------------------------------------------------------
+         remove.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+             disable.remove(disable.getSelectedIndex());     
+            }
+        });
+        
+        
         //-------------------------------------------------------
             //añade presionando enter
           book.addActionListener(new ActionListener() {
