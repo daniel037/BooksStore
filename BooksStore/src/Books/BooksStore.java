@@ -18,10 +18,10 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 /**
  *
- * @author DANIEL
+ * @author OSCAR DANIEL SALAZAR CEBALLOS....  CODIGO 2140341356
  */
 public class BooksStore extends Frame{
- private TextField book;
+    private TextField book;
     private Button add;
     private List enalble;
     private List disable;
@@ -29,7 +29,6 @@ public class BooksStore extends Frame{
     private Button clear;
     private Button men;
     private Button mayor;
-    
     //----------------------------------------------------------------------------------------
     public BooksStore()
     {
@@ -37,9 +36,7 @@ public class BooksStore extends Frame{
         Panel pc = new Panel(new GridLayout(1,2));
         Panel pa = new Panel(new GridLayout(1,4));
         Panel titulos = new Panel(new GridLayout(1,2));
-                
         BorderLayout b1 = new BorderLayout();
-
         book = new TextField();
         add = new Button("add");
         clear = new Button("clear");
@@ -52,13 +49,11 @@ public class BooksStore extends Frame{
         titulos.add(new Label("Enable"));
         titulos.add(new Label("Disable"));
         
-        
         p.add(new Label("title"), BorderLayout.WEST);
         p.add(book, BorderLayout.CENTER);
         p.add(add, BorderLayout.EAST);
         p.add(titulos,BorderLayout.SOUTH);
     
-
         pc.add(enalble);
         pc.add(disable);
        
@@ -66,14 +61,10 @@ public class BooksStore extends Frame{
         pa.add(men);
         pa.add(mayor);
         pa.add(clear);
-        
-        
-        
+                     
         add(p,BorderLayout.NORTH);
         add(pc,BorderLayout.CENTER);
         add(pa,BorderLayout.SOUTH);
-
- 
         
         setTitle("BOOKS STORE");
         setSize(400,300);
@@ -100,25 +91,14 @@ public class BooksStore extends Frame{
                 enalble.add(book.getText());
                 book.setText("");
             }
-        });
-        
-        //------------------------------------------------------
-        
+        });       
+        //------------------------------------------------------       
         remove.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
              enalble.remove(enalble.getSelectedIndex());      
             }
         });
-        //-------------------------------------------------------
-         remove.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-             disable.remove(disable.getSelectedIndex());     
-            }
-        });
-        
-        
         //-------------------------------------------------------
             //añade presionando enter
           book.addActionListener(new ActionListener() {
@@ -128,20 +108,14 @@ public class BooksStore extends Frame{
                 book.setText("");
             }
         });         
-        //-------------------------------------------------------disable
-
         //-----------------------menor----------------------------------
         men.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 enalble.add(disable.getSelectedItem());
-                disable.remove(disable.getSelectedIndex());
-                              
-                
+                disable.remove(disable.getSelectedIndex());                                            
             }
-        });
-        
-        
+        });            
         //-----------------------mayor----------------------------------
         mayor.addActionListener(new ActionListener() {
             @Override
@@ -149,27 +123,22 @@ public class BooksStore extends Frame{
                 disable.add(enalble.getSelectedItem());
                 enalble.remove(enalble.getSelectedIndex());        
             }        
-        });
-        
-        
-        
+        });                    
         //----------------clear----------------------------------------
         clear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            
-
+                disable.getSelectedItems();
+                disable.removeAll();               
+                enalble.getSelectedItems();
+                enalble.removeAll();                                           
             }
-        });
-        
-    }
-    
+        });      
+    } 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
          new BooksStore();
-    }
-    
+    }  
 }
-
